@@ -4,23 +4,23 @@
 #define echoPin 25
 #define trigPin 26
 
-#define FIREBASE_HOST "https://esp32-01-5f0aa-default-rtdb.firebaseio.com/"
-#define FIREBASE_AUTH "jxigena1L1I8Ij0Hx8L1qn8poWTTi30RauojCOJa"
+#define FIREBASE_HOST "https://esp32-01-5f0aa-default-rtdb.firebaseio.com/"   //replace this with your DB name
+#define FIREBASE_AUTH "jxigena1L1I8Ij0Hx8L1qn8poWTTi30RauojCOJa"              //replace this with your DB secret key
 #define WIFI_SSID "FreeWifi"
 #define WIFI_PASSWORD "8characters"
 
 FirebaseData firebaseData;
 FirebaseJson json;
 
-long duration;
-int distance;
+long duration;    //sensor stuff
+int distance;     //sensor stuff
 
 void setup() {
   // put your setup code here, to run once:
 
   Serial.begin(115200);
-  pinMode(trigPin, OUTPUT); // Sets the trigPin as an OUTPUT
-  pinMode(echoPin, INPUT); // Sets the echoPin as an INPUT
+  pinMode(trigPin, OUTPUT); // Sets the trigPin as an OUTPUT  //sensor stuff
+  pinMode(echoPin, INPUT); // Sets the echoPin as an INPUT    //sensor stuff
 
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   Serial.print("Connecting to Wi-Fi");
@@ -62,7 +62,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
-  // Clears the trigPin condition
+  // Clears the trigPin condition (sensor stuff)
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
   // Sets the trigPin HIGH (ACTIVE) for 10 microseconds
